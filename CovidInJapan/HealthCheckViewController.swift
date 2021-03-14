@@ -31,6 +31,7 @@ class HealthCheckViewController: UIViewController {
         calendar.appearance.headerTitleColor = colors.bluePurple
         calendar.appearance.weekdayTextColor = colors.bluePurple
         calendar.delegate = self
+        calendar.dataSource = self
         scrollView.addSubview(calendar)
         
         let checkLabel = UILabel()
@@ -78,6 +79,13 @@ class HealthCheckViewController: UIViewController {
         resultButton.backgroundColor = colors.blue
         resultButton.addTarget(self, action: #selector(resultButtonAction), for: [.touchUpInside, .touchUpOutside])
         scrollView.addSubview(resultButton)
+        
+        if UserDefaults.standard.string(forKey: today) != nil {
+            resultButton.isEnabled = false
+            resultButton.setTitle("診断済", for: .normal)
+            resultButton.backgroundColor = .white
+            resultButton.setTitleColor((.gray), for: .normal)
+        }
     }
     
     func createCheckItemView(y: CGFloat) -> UIView {
@@ -140,6 +148,8 @@ class HealthCheckViewController: UIViewController {
                     self.dismiss(animated: true, completion: nil)
                 }
             })
+            // 診断結果をローカル保存
+            UserDefaults.standard.set(resultTitle, forKey: self.today)
         })
         let noAction = UIAlertAction(title: "キャンセル", style: .destructive, handler: nil)
         alert.addAction(yesAction)
@@ -149,6 +159,17 @@ class HealthCheckViewController: UIViewController {
 }
 
 extension HealthCheckViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+    
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+        if let result = UserDefaults.standard.string(forKey: dateFormatter(day: date)) {
+            return result
+        }
+        return ""
+    }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, subtitleDefaultColorFor date: Date) -> UIColor? {
+        return .init(red: 0, green: 0, blue: 0, alpha: 0.7)
+    }
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
         return .clear
