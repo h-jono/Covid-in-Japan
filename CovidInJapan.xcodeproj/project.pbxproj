@@ -85,20 +85,20 @@
 		48C0774125FC8448003B3D06 /* CovidInJapan */ = {
 			isa = PBXGroup;
 			children = (
-				48C0774225FC8448003B3D06 /* AppDelegate.swift */,
-				48C0774425FC8448003B3D06 /* SceneDelegate.swift */,
-				48C0774625FC8448003B3D06 /* ViewController.swift */,
-				48C0774825FC8448003B3D06 /* Main.storyboard */,
-				48C0776525FCCCD3003B3D06 /* HealthCheckViewController.swift */,
-				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
-				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
 				48C0775025FC8449003B3D06 /* Info.plist */,
-				48C0775725FC84CA003B3D06 /* Colors.swift */,
-				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
 				48C0775D25FCA4CA003B3D06 /* API.swift */,
+				48C0774225FC8448003B3D06 /* AppDelegate.swift */,
 				4807F0E125FDD832008E481A /* ChartViewController.swift */,
 				4807F0E425FDE511008E481A /* CircleChartViewController.swift */,
+				48C0775725FC84CA003B3D06 /* Colors.swift */,
 				4807F0E725FDE732008E481A /* CovidSingleton.swift */,
+				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
+				48C0776525FCCCD3003B3D06 /* HealthCheckViewController.swift */,
+				48C0774425FC8448003B3D06 /* SceneDelegate.swift */,
+				48C0774625FC8448003B3D06 /* ViewController.swift */,
+				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
+				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
+				48C0774825FC8448003B3D06 /* Main.storyboard */,
 			);
 			path = CovidInJapan;
 			sourceTree = "<group>";
