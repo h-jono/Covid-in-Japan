@@ -7,6 +7,7 @@
 
 import UIKit
 import FSCalendar
+import CalculateCalendarLogic
 
 class HealthCheckViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class HealthCheckViewController: UIViewController {
         calendar.frame = CGRect(x: 20, y: 10, width: view.frame.size.width - 40, height: 300)
         calendar.appearance.headerTitleColor = colors.bluePurple
         calendar.appearance.weekdayTextColor = colors.bluePurple
+        calendar.delegate = self
         scrollView.addSubview(calendar)
         
         let checkLabel = UILabel()
@@ -118,4 +120,58 @@ class HealthCheckViewController: UIViewController {
     }
 
 
+}
+
+extension HealthCheckViewController: FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance {
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
+        return .clear
+    }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
+        // 本日判定
+        if dateFormatter(day: date) == dateFormatter(day: Date()) {
+            return colors.bluePurple
+        }
+        return .clear
+    }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderRadiusFor date: Date) -> CGFloat {
+        return 0.5
+    }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        // 土日判定
+        if judgeWeekday(date) == 1 {
+            return UIColor(red: 150/255, green: 30/255, blue: 0/255, alpha: 0.9)
+        } else if judgeWeekday(date) == 7 {
+            return UIColor(red: 0/255, green: 30/255, blue: 150/255, alpha: 0.9)
+        }
+        // 祝日判定
+        if judgeHoliday(date) {
+            return UIColor(red: 150/255, green: 30/255, blue: 0/255, alpha: 0.9)
+        }
+        return colors.black
+    }
+    
+    func dateFormatter(day: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: day)
+    }
+    
+    func judgeWeekday(_ date: Date) -> Int {
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.component(.weekday, from: date)
+    }
+    
+    func judgeHoliday(_ date: Date) -> Bool {
+        let calendar = Calendar(identifier: .gregorian)
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let holiday = CalculateCalendarLogic()
+        let judgeHoliday = holiday.judgeJapaneseHoliday(year: year, month: month, day: day)
+        return judgeHoliday
+    }
 }
