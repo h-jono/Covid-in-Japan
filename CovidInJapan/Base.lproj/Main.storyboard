@@ -38,10 +38,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="fWy-VL-cJn"/>
+                    <connections>
+                        <segue destination="OuT-4N-p6M" kind="show" identifier="goCircle" id="fUA-r4-hqC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="utT-Bs-yN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="77" y="921"/>
+        </scene>
+        <!--Circle Chart View Controller-->
+        <scene sceneID="dpt-4Y-Gja">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="OuT-4N-p6M" customClass="CircleChartViewController" customModule="CovidInJapan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bjz-Pl-jQe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oLh-Hx-ZNI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ifv-j7-XGw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rto-KZ-IAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="921"/>
         </scene>
         <!--Health Check View Controller-->
         <scene sceneID="ygy-hp-YCX">

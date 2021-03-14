@@ -1,20 +1,26 @@
 PODS:
   - CalculateCalendarLogic (0.4.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - FSCalendar (2.8.2)
 
 DEPENDENCIES:
   - CalculateCalendarLogic
+  - Charts
   - FSCalendar
 
 SPEC REPOS:
   trunk:
     - CalculateCalendarLogic
+    - Charts
     - FSCalendar
 
 SPEC CHECKSUMS:
   CalculateCalendarLogic: 84d3aff9456340ff07f7b77242a57b5d2f0ed631
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
 
-PODFILE CHECKSUM: db666c51d29fc5c23cc1fe4e87250f7054ade39d
+PODFILE CHECKSUM: 4748a3daa2608431de0a1a85689c7b8406e6211a
 
 COCOAPODS: 1.10.1

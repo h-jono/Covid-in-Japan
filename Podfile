@@ -7,5 +7,6 @@ target 'CovidInJapan' do
   # Pods for CovidInJapan
   pod 'FSCalendar'
   pod 'CalculateCalendarLogic'
+  pod 'Charts'
 
 end
