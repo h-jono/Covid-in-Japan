@@ -13,11 +13,13 @@ class HealthCheckViewController: UIViewController {
     
     let colors = Colors()
     var point = 0
+    var today = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGroupedBackground
+        today = dateFormatter(day: Date())
         
         let scrollView = UIScrollView()
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
@@ -154,7 +156,7 @@ extension HealthCheckViewController: FSCalendarDataSource, FSCalendarDelegate, F
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, borderDefaultColorFor date: Date) -> UIColor? {
         // 本日判定
-        if dateFormatter(day: date) == dateFormatter(day: Date()) {
+        if dateFormatter(day: date) == today {
             return colors.bluePurple
         }
         return .clear
