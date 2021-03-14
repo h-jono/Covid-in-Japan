@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4807F0E225FDD832008E481A /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807F0E125FDD832008E481A /* ChartViewController.swift */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
 		48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774425FC8448003B3D06 /* SceneDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		357AAF258745A97BE6B38B35 /* Pods_CovidInJapan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CovidInJapan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4807F0E125FDD832008E481A /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C0774425FC8448003B3D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				48C0775725FC84CA003B3D06 /* Colors.swift */,
 				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
 				48C0775D25FCA4CA003B3D06 /* API.swift */,
+				4807F0E125FDD832008E481A /* ChartViewController.swift */,
 			);
 			path = CovidInJapan;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				48C0776625FCCCD3003B3D06 /* HealthCheckViewController.swift in Sources */,
 				48C0775825FC84CA003B3D06 /* Colors.swift in Sources */,
 				48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */,
+				4807F0E225FDD832008E481A /* ChartViewController.swift in Sources */,
 				48C0775E25FCA4CA003B3D06 /* API.swift in Sources */,
 				48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */,
 			);

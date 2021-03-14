@@ -20,11 +20,28 @@
                     </view>
                     <connections>
                         <segue destination="I3A-kg-uFQ" kind="show" identifier="goHealthCheck" id="ffa-HA-4jp"/>
+                        <segue destination="q5t-Kg-YCp" kind="show" identifier="goChart" id="u9C-fA-Gke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="78" y="139"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="a7B-eE-6uJ">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="q5t-Kg-YCp" customClass="ChartViewController" customModule="CovidInJapan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="10e-AB-Qe4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="BH0-Kq-QY0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fWy-VL-cJn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utT-Bs-yN1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="77" y="921"/>
         </scene>
         <!--Health Check View Controller-->
         <scene sceneID="ygy-hp-YCX">
