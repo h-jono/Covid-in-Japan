@@ -10,6 +10,7 @@
 		4807F0E225FDD832008E481A /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807F0E125FDD832008E481A /* ChartViewController.swift */; };
 		4807F0E525FDE511008E481A /* CircleChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807F0E425FDE511008E481A /* CircleChartViewController.swift */; };
 		4807F0E825FDE732008E481A /* CovidSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807F0E725FDE732008E481A /* CovidSingleton.swift */; };
+		48543DF82600753A0014E43C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48543DF72600753A0014E43C /* GoogleService-Info.plist */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
 		48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774425FC8448003B3D06 /* SceneDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		4807F0E125FDD832008E481A /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		4807F0E425FDE511008E481A /* CircleChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartViewController.swift; sourceTree = "<group>"; };
 		4807F0E725FDE732008E481A /* CovidSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSingleton.swift; sourceTree = "<group>"; };
+		48543DF72600753A0014E43C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C0774425FC8448003B3D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		48C0774125FC8448003B3D06 /* CovidInJapan */ = {
 			isa = PBXGroup;
 			children = (
+				48543DF72600753A0014E43C /* GoogleService-Info.plist */,
 				48C0775025FC8449003B3D06 /* Info.plist */,
 				48C0775D25FCA4CA003B3D06 /* API.swift */,
 				48C0774225FC8448003B3D06 /* AppDelegate.swift */,
@@ -174,6 +177,7 @@
 				48C0774F25FC8449003B3D06 /* LaunchScreen.storyboard in Resources */,
 				48C0774C25FC8449003B3D06 /* Assets.xcassets in Resources */,
 				48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */,
+				48543DF82600753A0014E43C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
