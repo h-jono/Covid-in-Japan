@@ -101,13 +101,13 @@
 				48C0775725FC84CA003B3D06 /* Colors.swift */,
 				4807F0E725FDE732008E481A /* CovidSingleton.swift */,
 				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
+				48543E3526008EF90014E43C /* FirestoreData.swift */,
 				48C0776525FCCCD3003B3D06 /* HealthCheckViewController.swift */,
 				48C0774425FC8448003B3D06 /* SceneDelegate.swift */,
 				48C0774625FC8448003B3D06 /* ViewController.swift */,
 				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
 				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
 				48C0774825FC8448003B3D06 /* Main.storyboard */,
-				48543E3526008EF90014E43C /* FirestoreData.swift */,
 			);
 			path = CovidInJapan;
 			sourceTree = "<group>";
