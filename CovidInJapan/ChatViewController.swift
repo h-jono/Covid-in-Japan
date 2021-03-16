@@ -80,7 +80,7 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessageCel
         backButton.setImage(UIImage(named: "back"), for: .normal)
         backButton.tintColor = colors.white
         backButton.titleLabel?.font = .systemFont(ofSize: 20)
-        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpOutside)
+        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
         headerView.addSubview(backButton)
         
         let gradientLayer = CAGradientLayer()
