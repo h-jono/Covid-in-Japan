@@ -128,7 +128,7 @@ class ChartViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @objc func goCircle() {
-        print("tapped")
+        performSegue(withIdentifier: "goCircle", sender: nil)
     }
     @objc func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
