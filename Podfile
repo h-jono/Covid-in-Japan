@@ -13,5 +13,7 @@ target 'CovidInJapan' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'MessageKit'
+  pod 'MessageInputBar'
 
 end

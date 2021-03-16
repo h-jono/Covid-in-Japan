@@ -21,6 +21,7 @@
                     <connections>
                         <segue destination="I3A-kg-uFQ" kind="show" identifier="goHealthCheck" id="ffa-HA-4jp"/>
                         <segue destination="q5t-Kg-YCp" kind="show" identifier="goChart" id="u9C-fA-Gke"/>
+                        <segue destination="5zi-4T-i06" kind="show" identifier="goChat" id="NOM-G2-U7d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -61,6 +62,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rto-KZ-IAQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="925" y="921"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="0VH-XA-zGM">
+            <objects>
+                <viewController id="5zi-4T-i06" customClass="ChatViewController" customModule="CovidInJapan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fir-cb-crr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eKn-4w-VyE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a2C-YZ-GiN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fh1-0N-iWF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="-576"/>
         </scene>
         <!--Health Check View Controller-->
         <scene sceneID="ygy-hp-YCX">

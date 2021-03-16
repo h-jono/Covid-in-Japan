@@ -116,7 +116,7 @@ class ViewController: UIViewController {
         viewDidLoad()
     }
     @objc func chatAction() {
-        print("タップchat")
+        performSegue(withIdentifier: "goChat", sender: nil)
     }
     @objc func goHealthCheck() {
         performSegue(withIdentifier: "goHealthCheck", sender: nil)

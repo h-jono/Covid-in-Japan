@@ -11,6 +11,8 @@
 		4807F0E525FDE511008E481A /* CircleChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807F0E425FDE511008E481A /* CircleChartViewController.swift */; };
 		4807F0E825FDE732008E481A /* CovidSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4807F0E725FDE732008E481A /* CovidSingleton.swift */; };
 		48543DF82600753A0014E43C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48543DF72600753A0014E43C /* GoogleService-Info.plist */; };
+		48543E1526007F670014E43C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48543E1426007F670014E43C /* ChatViewController.swift */; };
+		48543E3626008EF90014E43C /* FirestoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48543E3526008EF90014E43C /* FirestoreData.swift */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
 		48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774425FC8448003B3D06 /* SceneDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* ViewController.swift */; };
@@ -30,6 +32,8 @@
 		4807F0E425FDE511008E481A /* CircleChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartViewController.swift; sourceTree = "<group>"; };
 		4807F0E725FDE732008E481A /* CovidSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CovidSingleton.swift; sourceTree = "<group>"; };
 		48543DF72600753A0014E43C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		48543E1426007F670014E43C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		48543E3526008EF90014E43C /* FirestoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreData.swift; sourceTree = "<group>"; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C0774425FC8448003B3D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 				48C0775D25FCA4CA003B3D06 /* API.swift */,
 				48C0774225FC8448003B3D06 /* AppDelegate.swift */,
 				4807F0E125FDD832008E481A /* ChartViewController.swift */,
+				48543E1426007F670014E43C /* ChatViewController.swift */,
 				4807F0E425FDE511008E481A /* CircleChartViewController.swift */,
 				48C0775725FC84CA003B3D06 /* Colors.swift */,
 				4807F0E725FDE732008E481A /* CovidSingleton.swift */,
@@ -102,6 +107,7 @@
 				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
 				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
 				48C0774825FC8448003B3D06 /* Main.storyboard */,
+				48543E3526008EF90014E43C /* FirestoreData.swift */,
 			);
 			path = CovidInJapan;
 			sourceTree = "<group>";
@@ -232,10 +238,12 @@
 			files = (
 				48C0774725FC8448003B3D06 /* ViewController.swift in Sources */,
 				48C0775B25FCA3FC003B3D06 /* Entity.swift in Sources */,
+				48543E1526007F670014E43C /* ChatViewController.swift in Sources */,
 				4807F0E525FDE511008E481A /* CircleChartViewController.swift in Sources */,
 				48C0776625FCCCD3003B3D06 /* HealthCheckViewController.swift in Sources */,
 				48C0775825FC84CA003B3D06 /* Colors.swift in Sources */,
 				48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */,
+				48543E3626008EF90014E43C /* FirestoreData.swift in Sources */,
 				4807F0E225FDD832008E481A /* ChartViewController.swift in Sources */,
 				48C0775E25FCA4CA003B3D06 /* API.swift in Sources */,
 				48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */,
