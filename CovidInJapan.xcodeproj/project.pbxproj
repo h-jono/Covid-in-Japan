@@ -14,7 +14,6 @@
 		48543E1526007F670014E43C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48543E1426007F670014E43C /* ChatViewController.swift */; };
 		48543E3626008EF90014E43C /* FirestoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48543E3526008EF90014E43C /* FirestoreData.swift */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
-		48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774425FC8448003B3D06 /* SceneDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* ViewController.swift */; };
 		48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C0774825FC8448003B3D06 /* Main.storyboard */; };
 		48C0774C25FC8449003B3D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48C0774B25FC8449003B3D06 /* Assets.xcassets */; };
@@ -36,7 +35,6 @@
 		48543E3526008EF90014E43C /* FirestoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreData.swift; sourceTree = "<group>"; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		48C0774425FC8448003B3D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		48C0774625FC8448003B3D06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		48C0774925FC8448003B3D06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		48C0774B25FC8449003B3D06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
 				48543E3526008EF90014E43C /* FirestoreData.swift */,
 				48C0776525FCCCD3003B3D06 /* HealthCheckViewController.swift */,
-				48C0774425FC8448003B3D06 /* SceneDelegate.swift */,
 				48C0774625FC8448003B3D06 /* ViewController.swift */,
 				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
 				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
@@ -246,7 +243,6 @@
 				48543E3626008EF90014E43C /* FirestoreData.swift in Sources */,
 				4807F0E225FDD832008E481A /* ChartViewController.swift in Sources */,
 				48C0775E25FCA4CA003B3D06 /* API.swift in Sources */,
-				48C0774525FC8448003B3D06 /* SceneDelegate.swift in Sources */,
 				4807F0E825FDE732008E481A /* CovidSingleton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
