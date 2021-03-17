@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-class CircleChartViewController: UIViewController {
+final class CircleChartViewController: UIViewController {
     
     let colors = Colors()
     

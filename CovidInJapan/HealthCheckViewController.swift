@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 import CalculateCalendarLogic
 
-class HealthCheckViewController: UIViewController {
+final class HealthCheckViewController: UIViewController {
     
     let colors = Colors()
     var point = 0

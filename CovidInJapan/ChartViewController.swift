@@ -8,7 +8,7 @@
 import UIKit
 import Charts
 
-class ChartViewController: UIViewController {
+final class ChartViewController: UIViewController {
     
     let colors = Colors()
     

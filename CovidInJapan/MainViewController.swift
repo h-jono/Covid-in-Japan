@@ -8,7 +8,7 @@
 import UIKit
 import PKHUD
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     let colors = Colors()
 

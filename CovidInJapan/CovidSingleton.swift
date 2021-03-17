@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CovidSingleton {
+final class CovidSingleton {
     
     private init() {}
     static let shared = CovidSingleton()
