@@ -10,7 +10,7 @@ import MessageKit
 import InputBarAccessoryView
 import FirebaseFirestore
 
-final class ChatViewController: MessagesViewController, MessagesDataSource, MessageCellDelegate, MessagesLayoutDelegate, MessagesDisplayDelegate {
+final class ChatViewController: MessagesViewController {
     
     private let colors = Colors()
     private var userId = ""
@@ -19,13 +19,6 @@ final class ChatViewController: MessagesViewController, MessagesDataSource, Mess
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        Firestore.firestore().collection("Messages").document().setData([
-//            "date": Date(),
-//            "senderId": "testId",
-//            "text": "testText",
-//            "userName": "testName"
-//        ])
         
         Firestore.firestore().collection("Messages").getDocuments(completion: { (document, error) in
             if error != nil {
@@ -58,7 +51,6 @@ final class ChatViewController: MessagesViewController, MessagesDataSource, Mess
         messagesCollectionView.messageCellDelegate = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        messagesCollectionView.messageCellDelegate = self
         messageInputBar.delegate = self
         messagesCollectionView.contentInset.top = 70
         
@@ -95,27 +87,11 @@ final class ChatViewController: MessagesViewController, MessagesDataSource, Mess
         dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    func currentSender() -> SenderType { // 送信者が自分か、その他の判別のメソッド
-        return Sender(senderId: userId, displayName: "MyName")
-    }
-    
     private func otherSender() -> SenderType {
         return Sender(senderId: "-1", displayName: "OtherName")
     }
     
-    
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType { // メッセージ表示のメソッド
-        return messages[indexPath.section]
-    }
-    
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int { // メッセージ数を返すメソッド
-        return messages.count
-    }
-    
-    
-    func getMessages() -> [Message] {
+    private func getMessages() -> [Message] {
         var messageArray: [Message] = []
         for i in 0..<firestoreData.count {
             messageArray.append(createMessage(text: firestoreData[i].text!, date: firestoreData[i].date!, firestoreData[i].senderId!))
@@ -127,39 +103,14 @@ final class ChatViewController: MessagesViewController, MessagesDataSource, Mess
     }
     
     // firestoreDataの text, date, senderId を Message 型に変換して返す
-    func createMessage(text: String, date: Date, _ senderId: String) -> Message {
+    private func createMessage(text: String, date: Date, _ senderId: String) -> Message {
         let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor.white])
         let sender = (senderId == userId) ? currentSender() : otherSender()
         return Message(attributedText: attributedText, sender: sender as! Sender, messageId: UUID().uuidString, date: date)
     }
-    
-    // MessagesDisplayDelegate メッセージの送り主を判定し、背景色を設定
-    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? colors.blueGreen : colors.redOrange
-    }
-    // MessagesLayoutDelegate メッセージ下部(日付部分)の高さを設定
-    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 16
-    }
-    // MessagesDataSource メッセージ下部に文字(日付)を表示する
-    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
-        let dateString = formatter.string(from: message.sentDate)
-        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
-    }
-    // アイコンセット
-    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let avatar: Avatar
-        avatar = Avatar(image: UIImage(named: isFromCurrentSender(message: message) ? "user" : "doctor"))
-        avatarView.set(avatar: avatar)
-    }
-    
 }
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
-    
     // メッセージ送信時に発火するメソッド
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         for component in inputBar.inputTextView.components { // 入力情報にアクセス
@@ -187,4 +138,42 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             print(error)
         }
     }
+}
+
+extension ChatViewController: MessagesDataSource, MessageCellDelegate, MessagesLayoutDelegate, MessagesDisplayDelegate {
+    // 送信者が自分か、その他の判別のメソッド
+    func currentSender() -> SenderType {
+        return Sender(senderId: userId, displayName: "MyName")
+    }
+    // メッセージ表示のメソッド
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return messages[indexPath.section]
+    }
+    // メッセージ数を返すメソッド
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messages.count
+    }
+    // MessagesDisplayDelegate メッセージの送り主を判定し、背景色を設定
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor { //
+        return isFromCurrentSender(message: message) ? colors.blueGreen : colors.redOrange
+    }
+    // MessagesLayoutDelegate メッセージ下部(日付部分)の高さを設定
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+    // MessagesDataSource メッセージ下部に文字(日付)を表示する
+    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        let dateString = formatter.string(from: message.sentDate)
+        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
+    }
+    // アイコンセット
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) { //
+        let avatar: Avatar
+        avatar = Avatar(image: UIImage(named: isFromCurrentSender(message: message) ? "user" : "doctor"))
+        avatarView.set(avatar: avatar)
+    }
+    
 }
