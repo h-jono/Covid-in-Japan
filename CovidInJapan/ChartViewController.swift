@@ -110,11 +110,12 @@ final class ChartViewController: UIViewController {
         
         prefectureArray = CovidSingleton.shared.prefecture
         prefectureArray.sort(by: { a, b -> Bool in
-            if pattern == "pcr"{
+            switch pattern {
+            case "pcr":
                 return a.pcr > b.pcr
-            } else if pattern == "deaths" {
+            case "deaths":
                 return a.deaths > b.deaths
-            } else {
+            default:
                 return a.cases > b.cases
             }
         })
@@ -134,7 +135,6 @@ final class ChartViewController: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             pattern = "cases"
-            
         case 1:
             pattern = "pcr"
         case 2:
@@ -168,15 +168,19 @@ final class ChartViewController: UIViewController {
         
         var entries: [BarChartDataEntry] = [] // データの値
         for i in 0...9 {
-            if pattern == "cases" {
+            switch pattern {
+            case "cases":
                 segment.selectedSegmentIndex = 0
                 entries += [BarChartDataEntry(x: Double(i), y: Double(self.prefectureArray[i].cases))]
-            } else if pattern == "pcr" {
+            case "pcr":
                 segment.selectedSegmentIndex = 1
                 entries += [BarChartDataEntry(x: Double(i), y: Double(prefectureArray[i].pcr))]
-            } else if pattern == "deaths" {
+            
+            case "deaths":
                 segment.selectedSegmentIndex = 2
                 entries += [BarChartDataEntry(x: Double(i), y: Double(prefectureArray[i].deaths))]
+            default:
+                break
             }
         }
         

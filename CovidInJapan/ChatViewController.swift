@@ -24,16 +24,15 @@ final class ChatViewController: MessagesViewController {
             if error != nil {
                 print("ChatViewController: Line(\(#line)):error:\(error!)")
             } else {
-                if let document = document {
-                    for i in 0..<document.count {
-                        var storeData = FirestoreData()
-                        
-                        storeData.date = (document.documents[i].get("date")! as! Timestamp).dateValue()
-                        storeData.senderId = document.documents[i].get("senderId")! as? String
-                        storeData.text = document.documents[i].get("text")! as? String
-                        storeData.userName = document.documents[i].get("userName")! as? String
-                        self.firestoreData.append(storeData)
-                    }
+                guard let document = document else { return }
+                for i in 0..<document.count {
+                    var storeData = FirestoreData()
+                    
+                    storeData.date = (document.documents[i].get("date")! as! Timestamp).dateValue()
+                    storeData.senderId = document.documents[i].get("senderId")! as? String
+                    storeData.text = document.documents[i].get("text")! as? String
+                    storeData.userName = document.documents[i].get("userName")! as? String
+                    self.firestoreData.append(storeData)
                 }
                 self.messages = self.getMessages()
                 self.messagesCollectionView.reloadData()
