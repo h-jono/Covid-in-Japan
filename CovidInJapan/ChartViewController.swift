@@ -10,20 +10,20 @@ import Charts
 
 final class ChartViewController: UIViewController {
     
-    let colors = Colors()
+    private let colors = Colors()
     
-    var prefectureLabel = UILabel()
-    var pcrLabel = UILabel()
-    var pcrCountLabel = UILabel()
-    var casesLabel = UILabel()
-    var casesCountLabel = UILabel()
-    var deathsLabel = UILabel()
-    var deathsCountLabel = UILabel()
-    var segment = UISegmentedControl()
-    var prefectureArray: [CovidInfo.Prefecture] = []
-    var chartView: HorizontalBarChartView!
-    var pattern = "cases" // セグメント選択肢保存用のプロパティ
-    var searchBar = UISearchBar()
+    private var prefectureLabel = UILabel()
+    private var pcrLabel = UILabel()
+    private var pcrCountLabel = UILabel()
+    private var casesLabel = UILabel()
+    private var casesCountLabel = UILabel()
+    private var deathsLabel = UILabel()
+    private var deathsCountLabel = UILabel()
+    private var segment = UISegmentedControl()
+    private var prefectureArray: [CovidInfo.Prefecture] = []
+    private var chartView: HorizontalBarChartView!
+    private var pattern = "cases" // セグメント選択肢保存用のプロパティ
+    private var searchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,13 +124,13 @@ final class ChartViewController: UIViewController {
         
         
     }
-    @objc func backButtonAction() {
+    @objc private func backButtonAction() {
         dismiss(animated: true, completion: nil)
     }
-    @objc func goCircle() {
+    @objc private func goCircle() {
         performSegue(withIdentifier: "goCircle", sender: nil)
     }
-    @objc func switchAction(sender: UISegmentedControl) {
+    @objc private func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             pattern = "cases"
@@ -146,7 +146,7 @@ final class ChartViewController: UIViewController {
         viewDidLoad()
     }
     
-    func prefectureDetailViewLabel(_ parentView: UIView, _ label: UILabel, _ x: CGFloat, _ y: CGFloat, text: String, size: CGFloat, weight: UIFont.Weight, color: UIColor) {
+    private func prefectureDetailViewLabel(_ parentView: UIView, _ label: UILabel, _ x: CGFloat, _ y: CGFloat, text: String, size: CGFloat, weight: UIFont.Weight, color: UIColor) {
         
         label.text = text
         label.textColor = color
@@ -159,7 +159,7 @@ final class ChartViewController: UIViewController {
         parentView.addSubview(label)
     }
     
-    func dataSet() {
+    private func dataSet() {
         var prefectures: [String] = [] // 都道府県名
         for i in 0...9 {
             prefectures += ["\(self.prefectureArray[i].name_ja)"]

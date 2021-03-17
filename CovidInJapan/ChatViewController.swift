@@ -12,7 +12,7 @@ import FirebaseFirestore
 
 final class ChatViewController: MessagesViewController, MessagesDataSource, MessageCellDelegate, MessagesLayoutDelegate, MessagesDisplayDelegate {
     
-    let colors = Colors()
+    private let colors = Colors()
     private var userId = ""
     private var firestoreData: [FirestoreData] = []
     private var messages: [Message] = []
@@ -91,7 +91,7 @@ final class ChatViewController: MessagesViewController, MessagesDataSource, Mess
         headerView.layer.insertSublayer(gradientLayer, at: 0)
         
     }
-    @objc func backButtonAction() {
+    @objc private func backButtonAction() {
         dismiss(animated: true, completion: nil)
     }
     
@@ -101,7 +101,7 @@ final class ChatViewController: MessagesViewController, MessagesDataSource, Mess
         return Sender(senderId: userId, displayName: "MyName")
     }
     
-    func otherSender() -> SenderType {
+    private func otherSender() -> SenderType {
         return Sender(senderId: "-1", displayName: "OtherName")
     }
     

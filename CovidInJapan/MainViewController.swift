@@ -10,7 +10,7 @@ import PKHUD
 
 final class MainViewController: UIViewController {
     
-    let colors = Colors()
+    private let colors = Colors()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ final class MainViewController: UIViewController {
         
     }
     
-    func setUpGradation() {
+    private func setUpGradation() {
         // グラデーションを扱う
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height / 2)
@@ -31,7 +31,7 @@ final class MainViewController: UIViewController {
         
     }
     
-    func setUpContent() {
+    private func setUpContent() {
         let contentView = UIView()
         contentView.frame.size = CGSize(width: view.frame.size.width, height: 340)
         contentView.center = CGPoint(x: view.center.x, y: view.center.y)
@@ -78,7 +78,7 @@ final class MainViewController: UIViewController {
         setUpAPI(parentView: contentView)
     }
     
-    func setUpLabel(_ text: String, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {
+    private func setUpLabel(_ text: String, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {
         let label = UILabel()
         label.text = text
         label.frame.size = size
@@ -89,7 +89,7 @@ final class MainViewController: UIViewController {
         parentView.addSubview(label)
     }
     
-    func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView) -> UIButton {
+    private func setUpButton(_ title: String, size: CGSize, y: CGFloat, color: UIColor, parentView: UIView) -> UIButton {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.frame.size = size
@@ -103,7 +103,7 @@ final class MainViewController: UIViewController {
         return button
     }
     
-    func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
+    private func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: name), for: .normal)
         button.frame.size = CGSize(width: 30, height: 30)
@@ -112,21 +112,21 @@ final class MainViewController: UIViewController {
         view.addSubview(button)
         return button
     }
-    @objc func reloadAction() {
+    @objc private func reloadAction() {
         loadView()
         viewDidLoad()
     }
-    @objc func chatAction() {
+    @objc private func chatAction() {
         performSegue(withIdentifier: "goChat", sender: nil)
     }
-    @objc func goHealthCheck() {
+    @objc private func goHealthCheck() {
         performSegue(withIdentifier: "goHealthCheck", sender: nil)
     }
-    @objc func goChart() {
+    @objc private func goChart() {
         performSegue(withIdentifier: "goChart", sender: nil)
     }
     
-    func setUpAPI(parentView: UIView) {
+    private func setUpAPI(parentView: UIView) {
         let pcr = UILabel()
         let positive = UILabel()
         let hospitalize = UILabel()
@@ -161,7 +161,7 @@ final class MainViewController: UIViewController {
         })
     }
     
-    func setUpAPILabel(_ label: UILabel, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {
+    private func setUpAPILabel(_ label: UILabel, size: CGSize, centerX: CGFloat, y: CGFloat, font: UIFont, color: UIColor, _ parentView: UIView) {
         label.frame.size = size
         label.center.x = centerX
         label.frame.origin.y = y
@@ -169,7 +169,5 @@ final class MainViewController: UIViewController {
         label.textColor = color
         parentView.addSubview(label)
     }
-
-
 }
 

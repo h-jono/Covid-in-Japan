@@ -11,9 +11,9 @@ import CalculateCalendarLogic
 
 final class HealthCheckViewController: UIViewController {
     
-    let colors = Colors()
-    var point = 0
-    var today = ""
+    private let colors = Colors()
+    private var point = 0
+    private var today = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +88,7 @@ final class HealthCheckViewController: UIViewController {
         }
     }
     
-    func createCheckItemView(y: CGFloat) -> UIView {
+    private func createCheckItemView(y: CGFloat) -> UIView {
         let uiView = UIView()
         uiView.frame = CGRect(x: 20, y: y, width: view.frame.size.width - 40, height: 70)
         uiView.backgroundColor = .white
@@ -99,34 +99,34 @@ final class HealthCheckViewController: UIViewController {
         return uiView
     }
     
-    func createLabel(parentView: UIView, text: String) {
+    private func createLabel(parentView: UIView, text: String) {
         let label = UILabel()
         label.text = text
         label.frame = CGRect(x: 60, y: 15, width: 200, height: 40)
         parentView.addSubview(label)
     }
     
-    func createImage(parentView: UIView, imageName: String) {
+    private func createImage(parentView: UIView, imageName: String) {
         let imageView = UIImageView()
         imageView.image = UIImage(named: imageName)
         imageView.frame = CGRect(x: 10, y: 12, width: 40, height: 40)
         parentView.addSubview(imageView)
     }
     
-    func createUISwitch(parentView: UIView, action: Selector) {
+    private func createUISwitch(parentView: UIView, action: Selector) {
         let uiSwitch = UISwitch()
         uiSwitch.frame = CGRect(x: parentView.frame.size.width - 60, y: 20, width: 50, height: 30)
         uiSwitch.addTarget(self, action: action, for: .valueChanged)
         parentView.addSubview(uiSwitch)
     }
-    @objc func switchAction(sender: UISwitch) {
+    @objc private func switchAction(sender: UISwitch) {
         if sender.isOn {
             point += 1
         } else {
             point -= 1
         }
     }
-    @objc func resultButtonAction() {
+    @objc private func resultButtonAction() {
         let alert = UIAlertController(title: "診断を完了しますか？", message: "診断は1日に１回までです。", preferredStyle: .actionSheet)
         let yesAction = UIAlertAction(title: "完了", style: .default, handler: { action in
             var resultTitle = ""

@@ -10,20 +10,20 @@ import Charts
 
 final class CircleChartViewController: UIViewController {
     
-    let colors = Colors()
+    private let colors = Colors()
     
-    var prefectureLabel = UILabel()
-    var pcrLabel = UILabel()
-    var pcrCountLabel = UILabel()
-    var casesLabel = UILabel()
-    var casesCountLabel = UILabel()
-    var deathsLabel = UILabel()
-    var deathsCountLabel = UILabel()
-    var segment = UISegmentedControl()
-    var prefectureArray: [CovidInfo.Prefecture] = []
+    private var prefectureLabel = UILabel()
+    private var pcrLabel = UILabel()
+    private var pcrCountLabel = UILabel()
+    private var casesLabel = UILabel()
+    private var casesCountLabel = UILabel()
+    private var deathsLabel = UILabel()
+    private var deathsCountLabel = UILabel()
+    private var segment = UISegmentedControl()
+    private var prefectureArray: [CovidInfo.Prefecture] = []
     
-    var pattern = "cases" // セグメント選択肢保存用のプロパティ
-    var searchBar = UISearchBar()
+    private var pattern = "cases" // セグメント選択肢保存用のプロパティ
+    private var searchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,13 +104,10 @@ final class CircleChartViewController: UIViewController {
         
         
     }
-    @objc func backButtonAction() {
+    @objc private func backButtonAction() {
         dismiss(animated: true, completion: nil)
     }
-    @objc func goCircle() {
-        print("tapped")
-    }
-    @objc func switchAction(sender: UISegmentedControl) {
+    @objc private func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
             pattern = "cases"
@@ -126,7 +123,7 @@ final class CircleChartViewController: UIViewController {
         viewDidLoad()
     }
     
-    func prefectureDetailViewLabel(_ parentView: UIView, _ label: UILabel, _ x: CGFloat, _ y: CGFloat, text: String, size: CGFloat, weight: UIFont.Weight, color: UIColor) {
+    private func prefectureDetailViewLabel(_ parentView: UIView, _ label: UILabel, _ x: CGFloat, _ y: CGFloat, text: String, size: CGFloat, weight: UIFont.Weight, color: UIColor) {
         
         label.text = text
         label.textColor = color
@@ -139,7 +136,7 @@ final class CircleChartViewController: UIViewController {
         parentView.addSubview(label)
     }
     
-    func dataSet() {
+    private func dataSet() {
         var entries: [PieChartDataEntry] = []
         if pattern == "cases" {
             segment.selectedSegmentIndex = 0
