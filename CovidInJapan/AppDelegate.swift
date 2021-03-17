@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
+import IQKeyboardManager
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             CovidSingleton.shared.prefecture = result
         })
         
+        IQKeyboardManager.shared().isEnabled = true
         return true
     }
 
