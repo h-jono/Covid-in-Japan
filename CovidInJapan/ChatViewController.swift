@@ -44,7 +44,6 @@ final class ChatViewController: MessagesViewController {
         
         if let uuid = UIDevice.current.identifierForVendor?.uuidString {
             userId = uuid
-            print(userId)
         }
         
         messagesCollectionView.messagesDataSource = self
