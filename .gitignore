@@ -30,6 +30,8 @@ playground.xcworkspace
 
 Pods/
 
+GoogleService-Info.plist
+
 Carthage/Build/
 
 Dependencies/

@@ -333,6 +333,7 @@ PODS:
   - InputBarAccessoryView (5.3.0):
     - InputBarAccessoryView/Core (= 5.3.0)
   - InputBarAccessoryView/Core (5.3.0)
+  - IQKeyboardManager (6.5.6)
   - leveldb-library (1.22.1)
   - MessageInputBar (0.4.1):
     - MessageInputBar/Core (= 0.4.1)
@@ -356,6 +357,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - FirebaseFirestoreSwift
   - FSCalendar
+  - IQKeyboardManager
   - MessageInputBar
   - MessageKit
   - PKHUD
@@ -382,6 +384,7 @@ SPEC REPOS:
     - gRPC-Core
     - GTMSessionFetcher
     - InputBarAccessoryView
+    - IQKeyboardManager
     - leveldb-library
     - MessageInputBar
     - MessageKit
@@ -410,6 +413,7 @@ SPEC CHECKSUMS:
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   InputBarAccessoryView: 1638fc3336698eaead9cd83ff2da6c6218fcb6bc
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
   MessageKit: 6a15a240a9a4767279de542a8fae861e83d8aedc
@@ -417,6 +421,6 @@ SPEC CHECKSUMS:
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 655a3a2ce2cc5658772b2e649a2371152cc11643
+PODFILE CHECKSUM: 86a5274b8abc0cd3d5e8cc0f17b901383c0f84ee
 
 COCOAPODS: 1.10.1

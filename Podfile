@@ -16,5 +16,6 @@ target 'CovidInJapan' do
   pod 'MessageKit'
   pod 'MessageInputBar'
   pod 'PKHUD'
+  pod 'IQKeyboardManager'
 
 end
