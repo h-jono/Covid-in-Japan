@@ -129,7 +129,7 @@ final class ChartViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     @objc private func goCircle() {
-        performSegue(withIdentifier: "goCircle", sender: nil)
+        performSegue(withIdentifier: R.segue.chartViewController.goCircle, sender: nil)
     }
     @objc private func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {

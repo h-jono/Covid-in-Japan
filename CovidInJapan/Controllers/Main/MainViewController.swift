@@ -117,13 +117,13 @@ final class MainViewController: UIViewController {
         viewDidLoad()
     }
     @objc private func chatAction() {
-        performSegue(withIdentifier: "goChat", sender: nil)
+        performSegue(withIdentifier: R.segue.mainViewController.goChat, sender: nil)
     }
     @objc private func goHealthCheck() {
-        performSegue(withIdentifier: "goHealthCheck", sender: nil)
+        performSegue(withIdentifier: R.segue.mainViewController.goHealthCheck, sender: nil)
     }
     @objc private func goChart() {
-        performSegue(withIdentifier: "goChart", sender: nil)
+        performSegue(withIdentifier: R.segue.mainViewController.goChart, sender: nil)
     }
     
     private func setUpAPI(parentView: UIView) {
