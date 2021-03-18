@@ -35,7 +35,7 @@ final class HealthCheckViewController: UIViewController {
         scrollView.addSubview(calendar)
         
         let checkLabel = UILabel()
-        checkLabel.text = "健康チェック"
+        checkLabel.text = R.string.settings.healthCheck()
         checkLabel.textColor = colors.white
         checkLabel.frame = CGRect(x: 0, y: 340, width: view.frame.size.width, height: 21)
         checkLabel.backgroundColor = colors.blue
@@ -46,27 +46,27 @@ final class HealthCheckViewController: UIViewController {
         let checkFeverView = createCheckItemView(y: 380)
         scrollView.addSubview(checkFeverView)
         createImage(parentView: checkFeverView, image: R.image.fever())
-        createLabel(parentView: checkFeverView, text: "37.5度以上の熱がある")
+        createLabel(parentView: checkFeverView, text: R.string.settings.fever())
         createUISwitch(parentView: checkFeverView, action: #selector(switchAction))
         let checkSoreThroatView = createCheckItemView(y: 465)
         scrollView.addSubview(checkSoreThroatView)
         createImage(parentView: checkSoreThroatView, image: R.image.soreThroat())
-        createLabel(parentView: checkSoreThroatView, text: "喉の痛みがある")
+        createLabel(parentView: checkSoreThroatView, text: R.string.settings.soreThroat())
         createUISwitch(parentView: checkSoreThroatView, action: #selector(switchAction))
         let checkSmellView = createCheckItemView(y: 550)
         scrollView.addSubview(checkSmellView)
         createImage(parentView: checkSmellView, image: R.image.lossOfSenseOfSmell())
-        createLabel(parentView: checkSmellView, text: "匂いを感じない")
+        createLabel(parentView: checkSmellView, text: R.string.settings.loseOfSenseOfSmell())
         createUISwitch(parentView: checkSmellView, action: #selector(switchAction))
         let checkTasteView = createCheckItemView(y: 635)
         scrollView.addSubview(checkTasteView)
         createImage(parentView: checkTasteView, image: R.image.lossOfSenseOfTaste())
-        createLabel(parentView: checkTasteView, text: "味が薄く感じる")
+        createLabel(parentView: checkTasteView, text: R.string.settings.loseOfSenseOfTaste())
         createUISwitch(parentView: checkTasteView, action: #selector(switchAction))
         let checkDullView = createCheckItemView(y: 720)
         scrollView.addSubview(checkDullView)
         createImage(parentView: checkDullView, image: R.image.cold())
-        createLabel(parentView: checkDullView, text: "だるさがある")
+        createLabel(parentView: checkDullView, text: R.string.settings.dull())
         createUISwitch(parentView: checkDullView, action: #selector(switchAction))
         
         let resultButton = UIButton(type: .system)
@@ -74,7 +74,7 @@ final class HealthCheckViewController: UIViewController {
         resultButton.center.x = scrollView.center.x
         resultButton.titleLabel?.font = .systemFont(ofSize: 20)
         resultButton.layer.cornerRadius = 5
-        resultButton.setTitle("診断完了", for: .normal)
+        resultButton.setTitle(R.string.settings.doneDiagnosis(), for: .normal)
         resultButton.setTitleColor(colors.white, for: .normal)
         resultButton.backgroundColor = colors.blue
         resultButton.addTarget(self, action: #selector(resultButtonAction), for: [.touchUpInside, .touchUpOutside])
@@ -82,7 +82,7 @@ final class HealthCheckViewController: UIViewController {
         
         if UserDefaults.standard.string(forKey: today) != nil {
             resultButton.isEnabled = false
-            resultButton.setTitle("診断済", for: .normal)
+            resultButton.setTitle(R.string.settings.diagnosed(), for: .normal)
             resultButton.backgroundColor = .white
             resultButton.setTitleColor((.gray), for: .normal)
         }
@@ -127,22 +127,22 @@ final class HealthCheckViewController: UIViewController {
         }
     }
     @objc private func resultButtonAction() {
-        let alert = UIAlertController(title: "診断を完了しますか？", message: "診断は1日に１回までです。", preferredStyle: .actionSheet)
-        let yesAction = UIAlertAction(title: "完了", style: .default, handler: { action in
+        let alert = UIAlertController(title: R.string.settings.do_you_want_to_complete_the_diagnosis(), message: R.string.settings.diagnosis_is_up_to_once_a_day(), preferredStyle: .actionSheet)
+        let yesAction = UIAlertAction(title: R.string.settings.done(), style: .default, handler: { action in
             var resultTitle = ""
             var resultMessage = ""
             if self.point >= 4 {
-                resultTitle = "高"
-                resultMessage = "感染している可能性が\n比較的高いです。\nPCR検査を受けましょう。"
+                resultTitle = R.string.settings.high()
+                resultMessage = R.string.settings.resultMessage_high()
             } else if self.point >= 2 {
-                resultTitle = "中"
-                resultMessage = "感染している可能性が\nあります。\nPCR検査を受けましょう。"
+                resultTitle = R.string.settings.middle()
+                resultMessage = R.string.settings.resultMessage_middle()
             } else {
-                resultTitle = "低"
-                resultMessage = "感染している可能性は\n０ではありません。\n外出は控えましょう。"
+                resultTitle = R.string.settings.low()
+                resultMessage = R.string.settings.resultMessage_low()
             }
             
-            let alert = UIAlertController(title: "感染している可能性「\(resultTitle)」", message: resultMessage, preferredStyle: .alert)
+            let alert = UIAlertController(title: R.string.settings.potentialInfection() + "「\(resultTitle)」", message: resultMessage, preferredStyle: .alert)
             self.present(alert, animated: true, completion: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     self.dismiss(animated: true, completion: nil)
@@ -151,7 +151,7 @@ final class HealthCheckViewController: UIViewController {
             // 診断結果をローカル保存
             UserDefaults.standard.set(resultTitle, forKey: self.today)
         })
-        let noAction = UIAlertAction(title: "キャンセル", style: .destructive, handler: nil)
+        let noAction = UIAlertAction(title: R.string.settings.cancel(), style: .destructive, handler: nil)
         alert.addAction(yesAction)
         alert.addAction(noAction)
         present(alert, animated: true, completion: nil)

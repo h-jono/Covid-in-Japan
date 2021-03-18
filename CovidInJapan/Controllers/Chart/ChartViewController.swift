@@ -22,7 +22,7 @@ final class ChartViewController: UIViewController {
     private var segment = UISegmentedControl()
     private var prefectureArray: [CovidInfo.Prefecture] = []
     private var chartView: HorizontalBarChartView!
-    private var pattern = "cases" // セグメント選択肢保存用のプロパティ
+    private var pattern = R.string.settings.cases() // セグメント選択肢保存用のプロパティ
     private var searchBar = UISearchBar()
     
     override func viewDidLoad() {
@@ -46,13 +46,13 @@ final class ChartViewController: UIViewController {
         
         let nextButton = UIButton(type: .system)
         nextButton.frame = CGRect(x: view.frame.size.width - 105, y: 25, width: 100, height: 30)
-        nextButton.setTitle("円グラフ", for: .normal)
+        nextButton.setTitle(R.string.settings.circleGraph(), for: .normal)
         nextButton.setTitleColor(colors.white, for: .normal)
         nextButton.titleLabel?.font = .systemFont(ofSize: 20)
         nextButton.addTarget(self, action: #selector(goCircle), for: .touchUpInside)
         view.addSubview(nextButton)
         
-        segment = UISegmentedControl(items: ["感染者数", "PCR数", "死者数"])
+        segment = UISegmentedControl(items: [R.string.settings.infectionNumber(), R.string.settings.pcrNumber(), R.string.settings.deathNumber()])
         segment.frame = CGRect(x: 10, y: 70, width: view.frame.size.width - 20, height: 20)
         segment.selectedSegmentTintColor = colors.blue
         segment.selectedSegmentIndex = 0
@@ -64,7 +64,7 @@ final class ChartViewController: UIViewController {
         searchBar = UISearchBar()
         searchBar.frame = CGRect(x: 10, y: 100, width: view.frame.size.width - 20, height: 20)
         searchBar.delegate = self
-        searchBar.placeholder = "都道府県を漢字で入力"
+        searchBar.placeholder = R.string.settings.enter_prefectures_in_kanji()
         searchBar.showsCancelButton = true
         searchBar.tintColor = colors.blue
         view.addSubview(searchBar)
@@ -79,16 +79,16 @@ final class ChartViewController: UIViewController {
         prefectureDetailView.layer.shadowRadius = 10
         view.addSubview(prefectureDetailView)
         
-        prefectureDetailViewLabel(prefectureDetailView, prefectureLabel, 1, 10, text: "東京", size: 30, weight: .ultraLight, color: colors.black)
-        prefectureDetailViewLabel(prefectureDetailView, pcrLabel, 0.39, 50, text: "PCR数", size: 15, weight: .bold, color: colors.bluePurple)
-        prefectureDetailViewLabel(prefectureDetailView, pcrCountLabel, 0.39, 85, text: "2222222", size: 30, weight: .bold, color: colors.blue)
-        prefectureDetailViewLabel(prefectureDetailView, casesLabel, 1, 50, text: "感染者数", size: 15, weight: .bold, color: colors.bluePurple)
-        prefectureDetailViewLabel(prefectureDetailView, casesCountLabel, 1, 85, text: "22222", size: 30, weight: .bold, color: colors.blue)
-        prefectureDetailViewLabel(prefectureDetailView, deathsLabel, 1.61, 50, text: "死者数", size: 15, weight: .bold, color: colors.bluePurple)
-        prefectureDetailViewLabel(prefectureDetailView, deathsCountLabel, 1.61, 85, text: "2222", size: 30, weight: .bold, color: colors.blue)
+        prefectureDetailViewLabel(prefectureDetailView, prefectureLabel, 1, 10, text: R.string.settings.tokyo(), size: 30, weight: .ultraLight, color: colors.black)
+        prefectureDetailViewLabel(prefectureDetailView, pcrLabel, 0.39, 50, text: R.string.settings.pcrNumber(), size: 15, weight: .bold, color: colors.bluePurple)
+        prefectureDetailViewLabel(prefectureDetailView, pcrCountLabel, 0.39, 85, text: "", size: 30, weight: .bold, color: colors.blue)
+        prefectureDetailViewLabel(prefectureDetailView, casesLabel, 1, 50, text: R.string.settings.infectionNumber(), size: 15, weight: .bold, color: colors.bluePurple)
+        prefectureDetailViewLabel(prefectureDetailView, casesCountLabel, 1, 85, text: "", size: 30, weight: .bold, color: colors.blue)
+        prefectureDetailViewLabel(prefectureDetailView, deathsLabel, 1.61, 50, text: R.string.settings.deathNumber(), size: 15, weight: .bold, color: colors.bluePurple)
+        prefectureDetailViewLabel(prefectureDetailView, deathsCountLabel, 1.61, 85, text: "", size: 30, weight: .bold, color: colors.blue)
         
         for i in 0 ..< CovidSingleton.shared.prefecture.count {
-            if CovidSingleton.shared.prefecture[i].name_ja == "東京" {
+            if CovidSingleton.shared.prefecture[i].name_ja == R.string.settings.tokyo() {
                 prefectureLabel.text = CovidSingleton.shared.prefecture[i].name_ja
                 pcrCountLabel.text = "\(CovidSingleton.shared.prefecture[i].pcr)"
                 casesCountLabel.text = "\(CovidSingleton.shared.prefecture[i].cases)"
@@ -111,9 +111,9 @@ final class ChartViewController: UIViewController {
         prefectureArray = CovidSingleton.shared.prefecture
         prefectureArray.sort(by: { a, b -> Bool in
             switch pattern {
-            case "pcr":
+            case R.string.settings.pcr():
                 return a.pcr > b.pcr
-            case "deaths":
+            case R.string.settings.deaths():
                 return a.deaths > b.deaths
             default:
                 return a.cases > b.cases
@@ -134,11 +134,11 @@ final class ChartViewController: UIViewController {
     @objc private func switchAction(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            pattern = "cases"
+            pattern = R.string.settings.cases()
         case 1:
-            pattern = "pcr"
+            pattern = R.string.settings.pcr()
         case 2:
-            pattern = "deaths"
+            pattern = R.string.settings.deaths()
         default:
             break
         }
@@ -169,14 +169,14 @@ final class ChartViewController: UIViewController {
         var entries: [BarChartDataEntry] = [] // データの値
         for i in 0...9 {
             switch pattern {
-            case "cases":
+            case R.string.settings.cases():
                 segment.selectedSegmentIndex = 0
                 entries += [BarChartDataEntry(x: Double(i), y: Double(self.prefectureArray[i].cases))]
-            case "pcr":
+            case R.string.settings.pcr():
                 segment.selectedSegmentIndex = 1
                 entries += [BarChartDataEntry(x: Double(i), y: Double(prefectureArray[i].pcr))]
             
-            case "deaths":
+            case R.string.settings.deaths():
                 segment.selectedSegmentIndex = 2
                 entries += [BarChartDataEntry(x: Double(i), y: Double(prefectureArray[i].deaths))]
             default:
@@ -184,7 +184,7 @@ final class ChartViewController: UIViewController {
             }
         }
         
-        let set = BarChartDataSet(entries: entries, label: "県別状況")
+        let set = BarChartDataSet(entries: entries, label: R.string.settings.status_by_prefecture())
         set.colors = [colors.blue]
         set.valueTextColor = colors.bluePurple
         set.highlightColor = colors.white

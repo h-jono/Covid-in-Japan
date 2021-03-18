@@ -50,17 +50,17 @@ final class MainViewController: UIViewController {
         let leftX = view.frame.size.width * 0.33
         let rightX = view.frame.size.width * 0.80
         
-        setUpLabel("Covid in Japan", size: CGSize(width: 180, height: 35), centerX: view.center.x - 20, y: -60, font: .systemFont(ofSize: 25, weight: .heavy), color: .white, contentView)
-        setUpLabel("PCR数", size: size, centerX: leftX, y: 20, font: labelFront, color: color, contentView)
-        setUpLabel("感染者数", size: size, centerX: rightX, y: 20, font: labelFront, color: color, contentView)
-        setUpLabel("入院者数", size: size, centerX: leftX, y: 120, font: labelFront, color: color, contentView)
-        setUpLabel("重症者数", size: size, centerX: rightX, y: 120, font: labelFront, color: color, contentView)
-        setUpLabel("死者数", size: size, centerX: leftX, y:220, font: labelFront, color: color, contentView)
-        setUpLabel("退院者数", size: size, centerX: rightX, y: 220, font: labelFront, color: color, contentView)
+        setUpLabel(R.string.settings.covidinJapan(), size: CGSize(width: 180, height: 35), centerX: view.center.x - 20, y: -60, font: .systemFont(ofSize: 25, weight: .heavy), color: .white, contentView)
+        setUpLabel(R.string.settings.pcrNumber(), size: size, centerX: leftX, y: 20, font: labelFront, color: color, contentView)
+        setUpLabel(R.string.settings.infectionNumber(), size: size, centerX: rightX, y: 20, font: labelFront, color: color, contentView)
+        setUpLabel(R.string.settings.hospitalizedNumber(), size: size, centerX: leftX, y: 120, font: labelFront, color: color, contentView)
+        setUpLabel(R.string.settings.severeIllNumber(), size: size, centerX: rightX, y: 120, font: labelFront, color: color, contentView)
+        setUpLabel(R.string.settings.deathNumber(), size: size, centerX: leftX, y:220, font: labelFront, color: color, contentView)
+        setUpLabel(R.string.settings.dischargesNumber(), size: size, centerX: rightX, y: 220, font: labelFront, color: color, contentView)
         
         let height = view.frame.size.height / 2
-        setUpButton("健康管理", size: size, y: height + 190, color: colors.blue, parentView: view).addTarget(self, action: #selector(goHealthCheck), for: .touchUpInside)
-        setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view).addTarget(self, action: #selector(goChart), for: .touchUpInside)
+        setUpButton(R.string.settings.healthCare(), size: size, y: height + 190, color: colors.blue, parentView: view).addTarget(self, action: #selector(goHealthCheck), for: .touchUpInside)
+        setUpButton(R.string.settings.status_by_prefecture(), size: size, y: height + 240, color: colors.blue, parentView: view).addTarget(self, action: #selector(goChart), for: .touchUpInside)
         
         setUpImageButton(R.image.chat(), x: view.frame.size.width - 50).addTarget(self, action: #selector(chatAction), for: .touchUpInside)
         setUpImageButton(R.image.reload(), x: 10).addTarget(self, action: #selector(reloadAction), for: .touchUpInside)

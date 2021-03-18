@@ -59,7 +59,7 @@ final class ChatViewController: MessagesViewController {
         let headerLabel = UILabel()
         headerLabel.font = .systemFont(ofSize: 20, weight: .bold)
         headerLabel.textColor = colors.white
-        headerLabel.text = "Doctor"
+        headerLabel.text = R.string.settings.doctor()
         headerLabel.frame = CGRect(x: 0, y: 20, width: 100, height: 40)
         headerLabel.center.x = view.center.x
         headerLabel.textAlignment = .center

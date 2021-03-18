@@ -1,0 +1,61 @@
+/* 
+  settings.strings
+  CovidInJapan
+
+  Created by 城野 on 2021/03/18.
+  
+*/
+// HealthCheckViewController
+
+"healthCheck" = "健康チェック";
+"fever" = "37.5度以上の熱がある";
+"soreThroat" = "喉の痛みがある";
+"loseOfSenseOfSmell" = "匂いを感じない";
+"loseOfSenseOfTaste" = "味が薄く感じる";
+"dull" = "だるさがある";
+
+"doneDiagnosis" = "診断完了";
+"diagnosed" = "診断済";
+
+"do_you_want_to_complete_the_diagnosis" = "診断を完了しますか？";
+"diagnosis_is_up_to_once_a_day" = "診断は1日に1回までです。";
+"done" = "完了";
+
+"high" = "高";
+"middle" = "中";
+"low" = "低";
+
+"resultMessage_high" = "感染している可能性が\n比較的高いです。\nPCR検査を受けましょう。";
+"resultMessage_middle" = "感染している可能性が\nあります。\nPCR検査を受けましょう。";
+"resultMessage_low" = "感染している可能性は\n０ではありません。\n外出は控えましょう。";
+
+"potentialInfection" = "感染している可能性";
+
+"cancel" = "キャンセル";
+
+// MainViewController
+"CovidinJapan" = "Covid in Japan";
+"pcrNumber" = "PCR数";
+"infectionNumber" = "感染者数";
+"hospitalizedNumber" = "入院者数";
+"severeIllNumber" = "重症者数";
+"deathNumber" = "死者数";
+"dischargesNumber" = "退院者数";
+"healthCare" = "健康管理";
+"status_by_prefecture" = "県別状況";
+
+// CircleChartViewController
+"cases" = "cases";
+"pcr" = "pcr";
+"deaths" = "deaths";
+"barGraph" = "棒グラフ";
+
+"enter_prefectures_in_kanji" = "都道府県を漢字で入力";
+"tokyo" = "東京";
+"top_five" = "Top5";
+
+// ChatViewController
+"doctor" = "Doctor";
+
+// ChartViewController
+"circleGraph" = "円グラフ";

@@ -18,6 +18,7 @@
 		4856D806260321EA000C8BB5 /* ChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D805260321EA000C8BB5 /* ChartView.storyboard */; };
 		4856D80926032287000C8BB5 /* CircleChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D80826032287000C8BB5 /* CircleChartView.storyboard */; };
 		48AE170426033EE2006E8D63 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE170326033EE2006E8D63 /* R.generated.swift */; };
+		48AE170726034597006E8D63 /* settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48AE170626034597006E8D63 /* settings.strings */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* MainViewController.swift */; };
 		48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C0774825FC8448003B3D06 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		4856D805260321EA000C8BB5 /* ChartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartView.storyboard; sourceTree = "<group>"; };
 		4856D80826032287000C8BB5 /* CircleChartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleChartView.storyboard; sourceTree = "<group>"; };
 		48AE170326033EE2006E8D63 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		48AE170626034597006E8D63 /* settings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = settings.strings; sourceTree = "<group>"; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C0774625FC8448003B3D06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		4856D8132603259D000C8BB5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				48AE170626034597006E8D63 /* settings.strings */,
 				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -269,6 +272,7 @@
 				48C0774F25FC8449003B3D06 /* LaunchScreen.storyboard in Resources */,
 				4856D806260321EA000C8BB5 /* ChartView.storyboard in Resources */,
 				48C0774C25FC8449003B3D06 /* Assets.xcassets in Resources */,
+				48AE170726034597006E8D63 /* settings.strings in Resources */,
 				48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */,
 				48543DF82600753A0014E43C /* GoogleService-Info.plist in Resources */,
 				4856D80326032162000C8BB5 /* HealthCheckView.storyboard in Resources */,
