@@ -13,6 +13,10 @@
 		48543DF82600753A0014E43C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48543DF72600753A0014E43C /* GoogleService-Info.plist */; };
 		48543E1526007F670014E43C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48543E1426007F670014E43C /* ChatViewController.swift */; };
 		48543E3626008EF90014E43C /* FirestoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48543E3526008EF90014E43C /* FirestoreData.swift */; };
+		4856D7FF260320A9000C8BB5 /* ChatView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D7FE260320A9000C8BB5 /* ChatView.storyboard */; };
+		4856D80326032162000C8BB5 /* HealthCheckView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D80226032162000C8BB5 /* HealthCheckView.storyboard */; };
+		4856D806260321EA000C8BB5 /* ChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D805260321EA000C8BB5 /* ChartView.storyboard */; };
+		4856D80926032287000C8BB5 /* CircleChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D80826032287000C8BB5 /* CircleChartView.storyboard */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* MainViewController.swift */; };
 		48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C0774825FC8448003B3D06 /* Main.storyboard */; };
@@ -33,6 +37,10 @@
 		48543DF72600753A0014E43C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		48543E1426007F670014E43C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		48543E3526008EF90014E43C /* FirestoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreData.swift; sourceTree = "<group>"; };
+		4856D7FE260320A9000C8BB5 /* ChatView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatView.storyboard; sourceTree = "<group>"; };
+		4856D80226032162000C8BB5 /* HealthCheckView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HealthCheckView.storyboard; sourceTree = "<group>"; };
+		4856D805260321EA000C8BB5 /* ChartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartView.storyboard; sourceTree = "<group>"; };
+		4856D80826032287000C8BB5 /* CircleChartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleChartView.storyboard; sourceTree = "<group>"; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C0774625FC8448003B3D06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +76,91 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4856D80B26032422000C8BB5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				48C0774225FC8448003B3D06 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4856D80C2603248B000C8BB5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4856D811260324F5000C8BB5 /* HealthCheck */,
+				4856D810260324DC000C8BB5 /* Main */,
+				4856D80F260324C9000C8BB5 /* CircleChart */,
+				4856D80E260324BC000C8BB5 /* Chat */,
+				4856D80D260324A9000C8BB5 /* Chart */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4856D80D260324A9000C8BB5 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				4856D805260321EA000C8BB5 /* ChartView.storyboard */,
+				4807F0E125FDD832008E481A /* ChartViewController.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
+		4856D80E260324BC000C8BB5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4856D7FE260320A9000C8BB5 /* ChatView.storyboard */,
+				48543E1426007F670014E43C /* ChatViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4856D80F260324C9000C8BB5 /* CircleChart */ = {
+			isa = PBXGroup;
+			children = (
+				4856D80826032287000C8BB5 /* CircleChartView.storyboard */,
+				4807F0E425FDE511008E481A /* CircleChartViewController.swift */,
+			);
+			path = CircleChart;
+			sourceTree = "<group>";
+		};
+		4856D810260324DC000C8BB5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				48C0774825FC8448003B3D06 /* Main.storyboard */,
+				48C0774625FC8448003B3D06 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		4856D811260324F5000C8BB5 /* HealthCheck */ = {
+			isa = PBXGroup;
+			children = (
+				4856D80226032162000C8BB5 /* HealthCheckView.storyboard */,
+				48C0776525FCCCD3003B3D06 /* HealthCheckViewController.swift */,
+			);
+			path = HealthCheck;
+			sourceTree = "<group>";
+		};
+		4856D81226032522000C8BB5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				48C0775D25FCA4CA003B3D06 /* API.swift */,
+				48C0775725FC84CA003B3D06 /* Colors.swift */,
+				4807F0E725FDE732008E481A /* CovidSingleton.swift */,
+				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
+				48543E3526008EF90014E43C /* FirestoreData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4856D8132603259D000C8BB5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		48C0773625FC8448003B3D06 = {
 			isa = PBXGroup;
 			children = (
@@ -89,22 +182,13 @@
 		48C0774125FC8448003B3D06 /* CovidInJapan */ = {
 			isa = PBXGroup;
 			children = (
+				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
 				48543DF72600753A0014E43C /* GoogleService-Info.plist */,
 				48C0775025FC8449003B3D06 /* Info.plist */,
-				48C0775D25FCA4CA003B3D06 /* API.swift */,
-				48C0774225FC8448003B3D06 /* AppDelegate.swift */,
-				4807F0E125FDD832008E481A /* ChartViewController.swift */,
-				48543E1426007F670014E43C /* ChatViewController.swift */,
-				4807F0E425FDE511008E481A /* CircleChartViewController.swift */,
-				48C0775725FC84CA003B3D06 /* Colors.swift */,
-				4807F0E725FDE732008E481A /* CovidSingleton.swift */,
-				48C0775A25FCA3FC003B3D06 /* Entity.swift */,
-				48543E3526008EF90014E43C /* FirestoreData.swift */,
-				48C0776525FCCCD3003B3D06 /* HealthCheckViewController.swift */,
-				48C0774625FC8448003B3D06 /* MainViewController.swift */,
-				48C0774B25FC8449003B3D06 /* Assets.xcassets */,
-				48C0774D25FC8449003B3D06 /* LaunchScreen.storyboard */,
-				48C0774825FC8448003B3D06 /* Main.storyboard */,
+				4856D80B26032422000C8BB5 /* Application */,
+				4856D80C2603248B000C8BB5 /* Controllers */,
+				4856D81226032522000C8BB5 /* Models */,
+				4856D8132603259D000C8BB5 /* Resources */,
 			);
 			path = CovidInJapan;
 			sourceTree = "<group>";
@@ -177,10 +261,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4856D80926032287000C8BB5 /* CircleChartView.storyboard in Resources */,
 				48C0774F25FC8449003B3D06 /* LaunchScreen.storyboard in Resources */,
+				4856D806260321EA000C8BB5 /* ChartView.storyboard in Resources */,
 				48C0774C25FC8449003B3D06 /* Assets.xcassets in Resources */,
 				48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */,
 				48543DF82600753A0014E43C /* GoogleService-Info.plist in Resources */,
+				4856D80326032162000C8BB5 /* HealthCheckView.storyboard in Resources */,
+				4856D7FF260320A9000C8BB5 /* ChatView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
