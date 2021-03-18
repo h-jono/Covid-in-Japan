@@ -62,11 +62,11 @@ final class MainViewController: UIViewController {
         setUpButton("健康管理", size: size, y: height + 190, color: colors.blue, parentView: view).addTarget(self, action: #selector(goHealthCheck), for: .touchUpInside)
         setUpButton("県別状況", size: size, y: height + 240, color: colors.blue, parentView: view).addTarget(self, action: #selector(goChart), for: .touchUpInside)
         
-        setUpImageButton("chat", x: view.frame.size.width - 50).addTarget(self, action: #selector(chatAction), for: .touchUpInside)
-        setUpImageButton("reload", x: 10).addTarget(self, action: #selector(reloadAction), for: .touchUpInside)
+        setUpImageButton(R.image.chat(), x: view.frame.size.width - 50).addTarget(self, action: #selector(chatAction), for: .touchUpInside)
+        setUpImageButton(R.image.reload(), x: 10).addTarget(self, action: #selector(reloadAction), for: .touchUpInside)
         
         let imageView = UIImageView()
-        let image = UIImage(named: "virus")
+        let image = R.image.virus()
         imageView.image = image
         imageView.frame = CGRect(x: view.frame.size.width, y: -65, width: 50, height: 50)
         contentView.addSubview(imageView)
@@ -103,9 +103,9 @@ final class MainViewController: UIViewController {
         return button
     }
     
-    private func setUpImageButton(_ name: String, x: CGFloat) -> UIButton {
+    private func setUpImageButton(_ image: UIImage?, x: CGFloat) -> UIButton {
         let button = UIButton(type: .system)
-        button.setImage(UIImage(named: name), for: .normal)
+        button.setImage(image, for: .normal)
         button.frame.size = CGSize(width: 30, height: 30)
         button.tintColor = .white
         button.frame.origin = CGPoint(x: x, y: 25)

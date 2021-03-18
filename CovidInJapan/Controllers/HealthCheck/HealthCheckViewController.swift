@@ -45,27 +45,27 @@ final class HealthCheckViewController: UIViewController {
         
         let checkFeverView = createCheckItemView(y: 380)
         scrollView.addSubview(checkFeverView)
-        createImage(parentView: checkFeverView, imageName: "fever")
+        createImage(parentView: checkFeverView, image: R.image.fever())
         createLabel(parentView: checkFeverView, text: "37.5度以上の熱がある")
         createUISwitch(parentView: checkFeverView, action: #selector(switchAction))
         let checkSoreThroatView = createCheckItemView(y: 465)
         scrollView.addSubview(checkSoreThroatView)
-        createImage(parentView: checkSoreThroatView, imageName: "sore-throat")
+        createImage(parentView: checkSoreThroatView, image: R.image.soreThroat())
         createLabel(parentView: checkSoreThroatView, text: "喉の痛みがある")
         createUISwitch(parentView: checkSoreThroatView, action: #selector(switchAction))
         let checkSmellView = createCheckItemView(y: 550)
         scrollView.addSubview(checkSmellView)
-        createImage(parentView: checkSmellView, imageName: "loss-of-sense-of-smell")
+        createImage(parentView: checkSmellView, image: R.image.lossOfSenseOfSmell())
         createLabel(parentView: checkSmellView, text: "匂いを感じない")
         createUISwitch(parentView: checkSmellView, action: #selector(switchAction))
         let checkTasteView = createCheckItemView(y: 635)
         scrollView.addSubview(checkTasteView)
-        createImage(parentView: checkTasteView, imageName: "loss-of-sense-of-taste")
+        createImage(parentView: checkTasteView, image: R.image.lossOfSenseOfTaste())
         createLabel(parentView: checkTasteView, text: "味が薄く感じる")
         createUISwitch(parentView: checkTasteView, action: #selector(switchAction))
         let checkDullView = createCheckItemView(y: 720)
         scrollView.addSubview(checkDullView)
-        createImage(parentView: checkDullView, imageName: "cold")
+        createImage(parentView: checkDullView, image: R.image.cold())
         createLabel(parentView: checkDullView, text: "だるさがある")
         createUISwitch(parentView: checkDullView, action: #selector(switchAction))
         
@@ -106,9 +106,9 @@ final class HealthCheckViewController: UIViewController {
         parentView.addSubview(label)
     }
     
-    private func createImage(parentView: UIView, imageName: String) {
+    private func createImage(parentView: UIView, image: UIImage?) {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: imageName)
+        imageView.image = image
         imageView.frame = CGRect(x: 10, y: 12, width: 40, height: 40)
         parentView.addSubview(imageView)
     }

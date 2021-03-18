@@ -67,7 +67,7 @@ final class ChatViewController: MessagesViewController {
         
         let backButton = UIButton(type: .system)
         backButton.frame = CGRect(x: 10, y: 30, width: 20, height: 20)
-        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.setImage(R.image.back(), for: .normal)
         backButton.tintColor = colors.white
         backButton.titleLabel?.font = .systemFont(ofSize: 20)
         backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
@@ -170,7 +170,7 @@ extension ChatViewController: MessagesDataSource, MessageCellDelegate, MessagesL
     // アイコンセット
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) { //
         let avatar: Avatar
-        avatar = Avatar(image: UIImage(named: isFromCurrentSender(message: message) ? "user" : "doctor"))
+        avatar = Avatar(image: isFromCurrentSender(message: message) ? R.image.user() : R.image.doctor())
         avatarView.set(avatar: avatar)
     }
     

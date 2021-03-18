@@ -38,7 +38,7 @@ final class ChartViewController: UIViewController {
         
         let backButton = UIButton(type: .system)
         backButton.frame = CGRect(x: 10, y: 30, width: 20, height: 20)
-        backButton.setImage(UIImage(named: "back"), for: .normal)
+        backButton.setImage(R.image.back(), for: .normal)
         backButton.tintColor = colors.white
         backButton.titleLabel?.font = .systemFont(ofSize: 20)
         backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
