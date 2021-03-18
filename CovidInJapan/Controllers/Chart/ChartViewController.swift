@@ -88,8 +88,8 @@ final class ChartViewController: UIViewController {
         prefectureDetailViewLabel(prefectureDetailView, deathsCountLabel, 1.61, 85, text: "", size: 30, weight: .bold, color: colors.blue)
         
         for i in 0 ..< CovidSingleton.shared.prefecture.count {
-            if CovidSingleton.shared.prefecture[i].name_ja == R.string.settings.tokyo() {
-                prefectureLabel.text = CovidSingleton.shared.prefecture[i].name_ja
+            if CovidSingleton.shared.prefecture[i].nameJa == R.string.settings.tokyo() {
+                prefectureLabel.text = CovidSingleton.shared.prefecture[i].nameJa
                 pcrCountLabel.text = "\(CovidSingleton.shared.prefecture[i].pcr)"
                 casesCountLabel.text = "\(CovidSingleton.shared.prefecture[i].cases)"
                 deathsCountLabel.text = "\(CovidSingleton.shared.prefecture[i].deaths)"
@@ -162,7 +162,7 @@ final class ChartViewController: UIViewController {
     private func dataSet() {
         var prefectures: [String] = [] // 都道府県名
         for i in 0...9 {
-            prefectures += ["\(self.prefectureArray[i].name_ja)"]
+            prefectures += ["\(self.prefectureArray[i].nameJa)"]
         }
         chartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: prefectures)
         
@@ -197,8 +197,8 @@ extension ChartViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
-        if let index = prefectureArray.firstIndex(where: { $0.name_ja == searchBar.text}) {
-            prefectureLabel.text = "\(prefectureArray[index].name_ja)"
+        if let index = prefectureArray.firstIndex(where: { $0.nameJa == searchBar.text}) {
+            prefectureLabel.text = "\(prefectureArray[index].nameJa)"
             pcrCountLabel.text = "\(prefectureArray[index].pcr)"
             casesCountLabel.text = "\(prefectureArray[index].cases)"
             deathsCountLabel.text = "\(prefectureArray[index].deaths)"
@@ -214,7 +214,7 @@ extension ChartViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         if let dataSet = chartView.data?.dataSets[highlight.dataSetIndex] {
             let index = dataSet.entryIndex(entry: entry)
-            prefectureLabel.text = "\(prefectureArray[index].name_ja)"
+            prefectureLabel.text = "\(prefectureArray[index].nameJa)"
             pcrCountLabel.text = "\(prefectureArray[index].pcr)"
             casesCountLabel.text = "\(prefectureArray[index].cases)"
             deathsCountLabel.text = "\(prefectureArray[index].deaths)"

@@ -80,8 +80,8 @@ final class CircleChartViewController: UIViewController {
         prefectureDetailViewLabel(prefectureDetailView, deathsCountLabel, 1.61, 85, text: "", size: 30, weight: .bold, color: colors.blue)
         
         for i in 0 ..< CovidSingleton.shared.prefecture.count {
-            if CovidSingleton.shared.prefecture[i].name_ja == R.string.settings.tokyo() {
-                prefectureLabel.text = CovidSingleton.shared.prefecture[i].name_ja
+            if CovidSingleton.shared.prefecture[i].nameJa == R.string.settings.tokyo() {
+                prefectureLabel.text = CovidSingleton.shared.prefecture[i].nameJa
                 pcrCountLabel.text = "\(CovidSingleton.shared.prefecture[i].pcr)"
                 casesCountLabel.text = "\(CovidSingleton.shared.prefecture[i].cases)"
                 deathsCountLabel.text = "\(CovidSingleton.shared.prefecture[i].deaths)"
@@ -143,17 +143,17 @@ final class CircleChartViewController: UIViewController {
         case R.string.settings.cases():
             segment.selectedSegmentIndex = 0
             for i in 0...4 {
-                entries += [PieChartDataEntry(value: Double(prefectureArray[i].cases), label: prefectureArray[i].name_ja)]
+                entries += [PieChartDataEntry(value: Double(prefectureArray[i].cases), label: prefectureArray[i].nameJa)]
             }
         case R.string.settings.pcr():
             segment.selectedSegmentIndex = 1
             for i in 0...4 {
-                entries += [PieChartDataEntry(value: Double(prefectureArray[i].pcr), label: prefectureArray[i].name_ja)]
+                entries += [PieChartDataEntry(value: Double(prefectureArray[i].pcr), label: prefectureArray[i].nameJa)]
             }
         case R.string.settings.deaths():
             segment.selectedSegmentIndex = 2
             for i in 0...4 {
-                entries += [PieChartDataEntry(value: Double(prefectureArray[i].deaths), label: prefectureArray[i].name_ja)]
+                entries += [PieChartDataEntry(value: Double(prefectureArray[i].deaths), label: prefectureArray[i].nameJa)]
             }
         default:
             break
@@ -177,8 +177,8 @@ extension CircleChartViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
-        if let index = prefectureArray.firstIndex(where: { $0.name_ja == searchBar.text}) {
-            prefectureLabel.text = "\(prefectureArray[index].name_ja)"
+        if let index = prefectureArray.firstIndex(where: { $0.nameJa == searchBar.text}) {
+            prefectureLabel.text = "\(prefectureArray[index].nameJa)"
             pcrCountLabel.text = "\(prefectureArray[index].pcr)"
             casesCountLabel.text = "\(prefectureArray[index].cases)"
             deathsCountLabel.text = "\(prefectureArray[index].deaths)"
