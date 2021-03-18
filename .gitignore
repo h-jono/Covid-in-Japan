@@ -32,6 +32,8 @@ Pods/
 
 GoogleService-Info.plist
 
+*.generated.swift
+
 Carthage/Build/
 
 Dependencies/

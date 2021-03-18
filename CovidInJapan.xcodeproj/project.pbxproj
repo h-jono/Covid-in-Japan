@@ -17,6 +17,7 @@
 		4856D80326032162000C8BB5 /* HealthCheckView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D80226032162000C8BB5 /* HealthCheckView.storyboard */; };
 		4856D806260321EA000C8BB5 /* ChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D805260321EA000C8BB5 /* ChartView.storyboard */; };
 		4856D80926032287000C8BB5 /* CircleChartView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4856D80826032287000C8BB5 /* CircleChartView.storyboard */; };
+		48AE170426033EE2006E8D63 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AE170326033EE2006E8D63 /* R.generated.swift */; };
 		48C0774325FC8448003B3D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774225FC8448003B3D06 /* AppDelegate.swift */; };
 		48C0774725FC8448003B3D06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C0774625FC8448003B3D06 /* MainViewController.swift */; };
 		48C0774A25FC8448003B3D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48C0774825FC8448003B3D06 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		4856D80226032162000C8BB5 /* HealthCheckView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HealthCheckView.storyboard; sourceTree = "<group>"; };
 		4856D805260321EA000C8BB5 /* ChartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartView.storyboard; sourceTree = "<group>"; };
 		4856D80826032287000C8BB5 /* CircleChartView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CircleChartView.storyboard; sourceTree = "<group>"; };
+		48AE170326033EE2006E8D63 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		48C0773F25FC8448003B3D06 /* CovidInJapan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CovidInJapan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48C0774225FC8448003B3D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48C0774625FC8448003B3D06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		48C0773625FC8448003B3D06 = {
 			isa = PBXGroup;
 			children = (
+				48AE170326033EE2006E8D63 /* R.generated.swift */,
 				48C0774125FC8448003B3D06 /* CovidInJapan */,
 				48C0774025FC8448003B3D06 /* Products */,
 				53863A3FE9A14CAD44F440C0 /* Pods */,
@@ -210,6 +213,7 @@
 			buildConfigurationList = 48C0775325FC8449003B3D06 /* Build configuration list for PBXNativeTarget "CovidInJapan" */;
 			buildPhases = (
 				FCC500D601A0118F7925F178 /* [CP] Check Pods Manifest.lock */,
+				48AE170126033E45006E8D63 /* ShellScript */,
 				48C0773B25FC8448003B3D06 /* Sources */,
 				48C0773C25FC8448003B3D06 /* Frameworks */,
 				48C0773D25FC8448003B3D06 /* Resources */,
@@ -275,6 +279,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		48AE170126033E45006E8D63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		655B0C44ABB3A7110613349D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +355,7 @@
 				4807F0E225FDD832008E481A /* ChartViewController.swift in Sources */,
 				48C0775E25FCA4CA003B3D06 /* API.swift in Sources */,
 				4807F0E825FDE732008E481A /* CovidSingleton.swift in Sources */,
+				48AE170426033EE2006E8D63 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
