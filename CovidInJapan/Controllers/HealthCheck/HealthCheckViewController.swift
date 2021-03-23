@@ -14,19 +14,22 @@ final class HealthCheckViewController: UIViewController {
     private let colors = Colors()
     private var point = 0
     private var today = ""
-
+    
+    private let scrollView = UIScrollView()
+    private let calendar = FSCalendar()
+    private let checkLabel = UILabel()
+    private let resultButton = UIButton(type: .system)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .systemGroupedBackground
         today = dateFormatter(day: Date())
         
-        let scrollView = UIScrollView()
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
         scrollView.contentSize = CGSize(width: view.frame.size.width, height: 950)
         view.addSubview(scrollView)
         
-        let calendar = FSCalendar()
         calendar.frame = CGRect(x: 20, y: 10, width: view.frame.size.width - 40, height: 300)
         calendar.appearance.headerTitleColor = colors.bluePurple
         calendar.appearance.weekdayTextColor = colors.bluePurple
@@ -34,7 +37,6 @@ final class HealthCheckViewController: UIViewController {
         calendar.dataSource = self
         scrollView.addSubview(calendar)
         
-        let checkLabel = UILabel()
         checkLabel.text = R.string.settings.healthCheck()
         checkLabel.textColor = colors.white
         checkLabel.frame = CGRect(x: 0, y: 340, width: view.frame.size.width, height: 21)
@@ -69,7 +71,6 @@ final class HealthCheckViewController: UIViewController {
         createLabel(parentView: checkDullView, text: R.string.settings.dull())
         createUISwitch(parentView: checkDullView, action: #selector(switchAction))
         
-        let resultButton = UIButton(type: .system)
         resultButton.frame = CGRect(x: 0, y: 820, width: 200, height: 40)
         resultButton.center.x = scrollView.center.x
         resultButton.titleLabel?.font = .systemFont(ofSize: 20)
@@ -80,12 +81,7 @@ final class HealthCheckViewController: UIViewController {
         resultButton.addTarget(self, action: #selector(resultButtonAction), for: [.touchUpInside, .touchUpOutside])
         scrollView.addSubview(resultButton)
         
-        if UserDefaults.standard.string(forKey: today) != nil {
-            resultButton.isEnabled = false
-            resultButton.setTitle(R.string.settings.diagnosed(), for: .normal)
-            resultButton.backgroundColor = .white
-            resultButton.setTitleColor((.gray), for: .normal)
-        }
+        isDiagnosed()
     }
     
     private func createCheckItemView(y: CGFloat) -> UIView {
@@ -119,6 +115,14 @@ final class HealthCheckViewController: UIViewController {
         uiSwitch.addTarget(self, action: action, for: .valueChanged)
         parentView.addSubview(uiSwitch)
     }
+    private func isDiagnosed() {
+        if UserDefaults.standard.string(forKey: today) != nil {
+            resultButton.isEnabled = false
+            resultButton.setTitle(R.string.settings.diagnosed(), for: .normal)
+            resultButton.backgroundColor = .white
+            resultButton.setTitleColor((.gray), for: .normal)
+        }
+    }
     @objc private func switchAction(sender: UISwitch) {
         if sender.isOn {
             point += 1
@@ -150,6 +154,7 @@ final class HealthCheckViewController: UIViewController {
             })
             // 診断結果をローカル保存
             UserDefaults.standard.set(resultTitle, forKey: self.today)
+            self.isDiagnosed()
         })
         let noAction = UIAlertAction(title: R.string.settings.cancel(), style: .destructive, handler: nil)
         alert.addAction(yesAction)
