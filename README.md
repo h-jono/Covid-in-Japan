@@ -35,3 +35,6 @@ Xcode/Swift
 Firebase
 
 ### 画面概要:
+
+### TODO:
+- レスポンシブ対応
