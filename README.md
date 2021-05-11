@@ -17,5 +17,13 @@ Xcode/Swift
 
 ### 使用ライブラリ:
 [IQKeyboardManager](https://github.com/hackiftekhar/IQKeyboardManager)
+[FSCalendar](https://github.com/WenchaoD/FSCalendar)
+[CalculateCalendarLogic](https://cocoapods.org/pods/CalculateCalendarLogic)
+[Charts](https://github.com/danielgindi/Charts)
+[MessageKit](https://github.com/MessageKit/MessageKit)
+[MessageInputBar](https://github.com/MessageKit/MessageInputBar)
+[PKHUD](https://github.com/pkluz/PKHUD)
+[R.swift](https://github.com/mac-cain13/R.swift)
+Firebase
 
 ### 画面概要:
