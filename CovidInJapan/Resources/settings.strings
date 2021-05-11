@@ -47,7 +47,7 @@
 // CircleChartViewController
 "cases" = "cases";
 "pcr" = "pcr";
-"deaths" = "deaths";
+"deaths" = "死者数";
 "barGraph" = "棒グラフ";
 
 "enter_prefectures_in_kanji" = "都道府県を漢字で入力";
